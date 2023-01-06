@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <title>Shuwa</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
+  </head>
+
+  <body>
+    <script>
+      console.log("started");
+      async function loadModel() {
+        const model = await tf.loadLayersModel("model.json");
+        model.predict(tf.tensor2d([[-0.15065689, -0.34524533]])).print();
+      }
+      loadModel();
+    </script>
+  </body>
+</html>
